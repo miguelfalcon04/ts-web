@@ -5,17 +5,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsc && lite-server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "lite-server": "^2.6.1",
     "typescript": "^5.6.2"
   },
   "dependencies": {
     "@ionic/angular": "^8.3.1"
-  }
+  },
+  "description": ""
 }

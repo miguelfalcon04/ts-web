@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TypeScript Web App</title>
+  <title>Saludar</title>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
   <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1 id="greeting"></h1>
+  <ion-item>
+    <ion-input id="messageInput" label="Introduzca su nombre"></ion-input>
+  </ion-item>
+  <ion-button id="submitButton" expand="block">Saludar</ion-button>
+
+  <div id="cardContainer"></div>
+
   <script src="index.js"></script>
 </body>
 
