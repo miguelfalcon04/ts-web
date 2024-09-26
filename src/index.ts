@@ -1,4 +1,3 @@
-// import axios from "axios";
 // import { Observable } from "rxjs";
 
 async function showCard(input: string): Promise<string>{
@@ -11,6 +10,21 @@ async function showCard(input: string): Promise<string>{
       }
     }, 2000);
   });
+}
+
+async function fetchImage() {
+  try {
+    const response = await fetch("https://picsum.photos/200/300");
+
+    console.log(response);
+    const img = new Image();
+    img.onload
+    return response;
+    
+  } catch (error) {
+    console.error("Error al generar imagen");
+  }
+ 
 }
 
 const cardContainer = document.getElementById('cardContainer');
