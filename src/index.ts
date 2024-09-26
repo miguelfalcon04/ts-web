@@ -1,9 +1,20 @@
+async function showCard(input: string): Promise<string>{
+  return new Promise ((resolve, reject) => {
+    setTimeout(() => {
+      if(input.trim()){
+        resolve(`${input}`);
+      }else{
+        reject(console.error("Petardazo"));
+      }
+    }, 2000);
+  });
+}
+
 const cardContainer = document.getElementById('cardContainer');
 
 // Función para mostrar el nombre en una tarjeta (ion-card)
 function displayName(message: string | null | undefined): void {
-  // Si el mensaje es nulo, indefinido o vacío, lo dejamos vacío
-  if (!message) message = ""; 
+  if (!message) message = ""; // Si el mensaje es nulo, indefinido o vacío, lo dejamos vacío
 
   // Crear la tarjeta (ion-card) y el contenido (ion-card-content)
   const card = document.createElement("ion-card");
@@ -13,20 +24,23 @@ function displayName(message: string | null | undefined): void {
   cardContent.textContent = message;
   card.appendChild(cardContent);
 
-  // Añadir la tarjeta al contenedor (cardContainer)
-  cardContainer?.appendChild(card);
+  cardContainer?.appendChild(card);   // Añadir la tarjeta a cardContainer
 }
 
 // Función que recoge el valor del input y llama a displayName
 function addName() {
-  // Obtener el valor del ion-input
-  const ionInput = (document.getElementById("messageInput") as HTMLInputElement);
+  const ionInput = (document.getElementById("messageInput") as HTMLInputElement);   // Obtener el valor del ion-input
 
   // Llamar a displayName con el valor del input
-  displayName(ionInput.value);
+  showCard(ionInput.value).
+    then((respuesta) => {
+      displayName(respuesta);
+    })
+    .catch((error) =>{
+      console.error(error)
+    });   
 
-  // Limpiar el campo de entrada después de agregar la tarjeta
-  ionInput.value = "";
+  ionInput.value = "";  // Limpiar el campo de entrada después de agregar la tarjeta
 }
 
 // Añadir el evento de click al botón de enviar
