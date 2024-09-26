@@ -1,7 +1,59 @@
-/* src/styles.css */
+/* Estilos generales para el body */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-  }
-  
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #f0f0f5; /* Color de fondo suave */
+}
+
+/* Estilos generales para el contenedor */
+.container {
+  padding: 20px;
+  max-width: 1000px; /* Ajustamos el ancho máximo para acomodar varias cartas */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Estilo para el contenedor de tarjetas */
+#cardContainer {
+  display: flex; /* Activar flexbox */
+  flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan en la siguiente fila si no caben */
+  gap: 15px; /* Espacio entre las tarjetas */
+  justify-content: center; /* Centrar las tarjetas en el contenedor */
+}
+
+/* Estilo para el ion-input */
+ion-input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --background: #f9f9f9;
+  --border-radius: 10px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo para el ion-button */
+ion-button {
+  width: 100%;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra en el botón */
+  --background: #3880ff; /* Color primario de Ionic */
+  --color: white; /* Color del texto */
+}
+
+/* Estilo para el ion-card que aparece con el mensaje */
+ion-card {
+  width: 200px; /* Ancho fijo para las tarjetas */
+  --background: white;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra en la carta */
+  --border-radius: 10px;
+  margin: 0; /* Remover el margen superior */
+}
+
+ion-card-content {
+  font-size: 16px;
+  padding: 15px;
+  color: #333; /* Color del texto */
+}

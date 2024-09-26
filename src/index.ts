@@ -1,3 +1,6 @@
+// import axios from "axios";
+// import { Observable } from "rxjs";
+
 async function showCard(input: string): Promise<string>{
   return new Promise ((resolve, reject) => {
     setTimeout(() => {
@@ -18,10 +21,13 @@ function displayName(message: string | null | undefined): void {
 
   // Crear la tarjeta (ion-card) y el contenido (ion-card-content)
   const card = document.createElement("ion-card");
+  const cardTitle = document.createElement("ion-card-title");
   const cardContent = document.createElement("ion-card-content");
   
   // Añadir el mensaje al contenido de la tarjeta
-  cardContent.textContent = message;
+  cardTitle.textContent = message;
+  cardContent.textContent = "message";
+  card.appendChild(cardTitle);
   card.appendChild(cardContent);
 
   cardContainer?.appendChild(card);   // Añadir la tarjeta a cardContainer

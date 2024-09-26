@@ -1,4 +1,6 @@
 "use strict";
+// import axios from "axios";
+// import { Observable } from "rxjs";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -30,9 +32,12 @@ function displayName(message) {
         message = ""; // Si el mensaje es nulo, indefinido o vacío, lo dejamos vacío
     // Crear la tarjeta (ion-card) y el contenido (ion-card-content)
     const card = document.createElement("ion-card");
+    const cardTitle = document.createElement("ion-card-title");
     const cardContent = document.createElement("ion-card-content");
     // Añadir el mensaje al contenido de la tarjeta
-    cardContent.textContent = message;
+    cardTitle.textContent = message;
+    cardContent.textContent = "message";
+    card.appendChild(cardTitle);
     card.appendChild(cardContent);
     cardContainer === null || cardContainer === void 0 ? void 0 : cardContainer.appendChild(card); // Añadir la tarjeta a cardContainer
 }
